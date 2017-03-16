@@ -1,0 +1,38 @@
+[
+	{
+		"id": 1,
+		"name": "Row One",
+		"clicks": 45002,
+		"cost_per_acquisition": {
+			"value": 3.26,
+			"goal": 2.00
+		},
+		"spend": 380.78,
+		"start_date": "2017-03-10T03:03:25+00:00",
+		"status": "PAUSED"
+	},
+	{
+		"id": 2,
+		"name": "Row Two",
+		"clicks": 304238,
+		"cost_per_acquisition": {
+			"value": 2.50,
+			"goal": 2.00
+		},
+		"spend": 807.28,
+		"start_date": "2017-03-06T14:53:25+00:00",
+		"status": "ACTIVE"
+	},
+	{
+		"id": 3,
+		"name": "Row Three with a really super long, and I mean really really really really really really really really really really really reeeeeeally super long name",
+		"clicks": 65430,
+		"cost_per_acquisition": {
+			"value": 8.24,
+			"goal": 5.00
+		},
+		"spend": 791.78,
+		"start_date": "2017-01-22T19:37:18+00:00",
+		"status": "PAUSED"
+	}
+]
