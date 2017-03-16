@@ -1,6 +1,7 @@
 import data from './ap-data-sample.json'
 import dateFormat from 'dateformat'
 
+/* my catch all util file to simpulate API calls or other functions */
 export default class Util {
     static loadData() {
         const loadedData = [];
@@ -19,5 +20,9 @@ export default class Util {
         })
 
         return loadedData;
+    }
+
+    static filterData(filter, data) {
+
     }
 }

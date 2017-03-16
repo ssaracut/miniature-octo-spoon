@@ -8,13 +8,17 @@ import 'react-table/react-table.css'
 import './App.css';
 
 
-class App extends Component {
+export class App extends Component {
   componentWillMount() {
     this.props.appActions.loadData()
   }
   render() {
 
-    function campaignName(props) {
+    const handleFilter = (event) => {
+
+    }
+
+    const campaignName = (props) => {
       const statusClass = props.row.status === "ACTIVE" ? "status-active" : "status-paused";
       return (
         <div>
@@ -52,6 +56,10 @@ class App extends Component {
     return (
       <div>
         <h1>Campaigns</h1>
+        <label>
+          Search:
+          <input type="text" name="search" onChange={handleFilter} />
+        </label>
         <ReactTable
           data={this.props.data}
           columns={columns}
