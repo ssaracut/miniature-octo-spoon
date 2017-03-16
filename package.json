@@ -2,6 +2,7 @@
   "name": "miniature-octo-spoon",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://ssaracut.github.io/miniature-octo-spoon/",
   "dependencies": {
     "dateformat": "^2.0.0",
     "react": "^15.4.2",
