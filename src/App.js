@@ -1,11 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import AppActions from './redux/AppActions'
-import ReactTable from 'react-table';
-import logo from './logo.svg';
+import { Container, Select, Input } from 'semantic-ui-react'
+import ReactTable from 'react-table'
+import logo from './logo.svg'
 import 'react-table/react-table.css'
-import './App.css';
+import './App.css'
 
 
 export class App extends Component {
@@ -20,13 +21,13 @@ export class App extends Component {
 
     const campaignName = (props) => {
       const statusClass = props.row.status === "ACTIVE" ? "status-active" : "status-paused";
-      return (
-        <div>
-          <div className={statusClass}><span className="campaign-name" title={props.value}>{props.value}</span></div>
-        </div >
-      )
+      return <div style={{ display: 'inline', lineHeight: '36px' }}><div className={statusClass}></div><span className="campaign-name" title={props.value}>{props.value}</span></div>
     }
 
+    const customColumn = (props) => {
+      const statusClass = props.row.status === "ACTIVE" ? "status-active" : "status-paused";
+      return <span style={{ padding: '0px 7px', lineHeight: '36px' }} title={props.value}>{props.value}</span>
+    }
     const columns = [{
       header: 'Campaign Name',
       accessor: 'name',
@@ -36,30 +37,35 @@ export class App extends Component {
       header: 'Start Date',
       accessor: 'start_date',
       minWidth: 170,
+      render: customColumn,
     },
     {
       header: 'Clicks',
       accessor: 'clicks',
+      render: customColumn,
     },
     {
       header: 'Goal',
-      accessor: 'cost_per_acquisition.goal',
+      accessor: 'cpa_goal',
+      render: customColumn,
     }, {
       header: 'CPA',
-      accessor: 'cost_per_acquisition.value',
+      accessor: 'cpa_value',
+      render: customColumn,
     }, {
       header: 'Spend',
       accessor: 'spend',
+      render: customColumn,
     }]
 
 
     return (
       <div>
-        <h1>Campaigns</h1>
-        <label>
-          Search:
-          <input type="text" name="search" onChange={handleFilter} />
-        </label>
+        <span className="title">Campaigns</span>
+        <Container style={{ width: '100%', height: '45px', backgroundColor: '#e4eaed', margin: '10px 0px' }}>
+          <Select className="bulk-action" placeholder='Bulk Action' />
+          <Input className="search-box" icon='search' iconPosition='left' placeholder='Search' />
+        </Container>
         <ReactTable
           data={this.props.data}
           columns={columns}

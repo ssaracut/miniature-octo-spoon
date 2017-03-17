@@ -10,7 +10,8 @@
     "react-redux": "^5.0.3",
     "react-table": "^5.3.4",
     "redux": "^3.6.0",
-    "redux-actions": "^2.0.1"
+    "redux-actions": "^2.0.1",
+    "semantic-ui-react": "^0.67.1"
   },
   "devDependencies": {
     "react-scripts": "0.9.5",

@@ -16,7 +16,7 @@ export default class Util {
             const formattedCpaGoal = formatCurrency(item.cost_per_acquisition.goal);
             const formattedCpaValue = formatCurrency(item.cost_per_acquisition.value);
             const formattedSpend = formatCurrency(item.spend);
-            loadedData.push({ ...item, start_date: formattedDate, clicks: formattedClicks, cost_per_acquisition: { ...item.cost_per_acquisition, goal: formattedCpaGoal, value: formattedCpaValue }, spend: formattedSpend });
+            loadedData.push({ id: item.id, status: item.status, name: item.name, start_date: formattedDate, clicks: formattedClicks, cpa_goal: formattedCpaGoal, cpa_value: formattedCpaValue, spend: formattedSpend });
         })
 
         return loadedData;
